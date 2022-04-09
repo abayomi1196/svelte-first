@@ -1,5 +1,8 @@
 <script>
+  import Button from "./Button.svelte";
+
   export let name;
+  let count;
 </script>
 
 <main>
@@ -8,6 +11,8 @@
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
     how to build Svelte apps.
   </p>
+
+  <Button {count} />
 </main>
 
 <style>
