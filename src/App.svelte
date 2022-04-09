@@ -1,8 +1,19 @@
 <script>
+  import { count } from "./stores";
+  import { onDestroy } from "svelte";
   import Button from "./Button.svelte";
 
+  const unsubscribe = count.subscribe((value) => {
+    console.log(value);
+  });
+
+  const increment = () => {
+    count.update((n) => n + 1);
+  };
+
+  onDestroy(() => unsubscribe());
+
   export let name;
-  let count;
 </script>
 
 <main>
@@ -14,8 +25,7 @@
 
   <form><input type="text" bind:value={name} /></form>
 
-  <Button bind:count />
-  <Button count={0} />
+  <Button count={$count} {increment} />
 </main>
 
 <style>

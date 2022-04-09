@@ -1,10 +1,7 @@
 <script>
   // props with default value
-  export let count = 42;
-
-  function increment() {
-    count += 1;
-  }
+  export let count;
+  export let increment;
 </script>
 
 <button on:click={increment}>count: {count}</button>
