@@ -6,13 +6,16 @@
 </script>
 
 <main>
-  <h1>Hi {name}!</h1>
+  <h1>Hello {name} !</h1>
   <p>
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
     how to build Svelte apps.
   </p>
 
-  <Button {count} />
+  <form><input type="text" bind:value={name} /></form>
+
+  <Button bind:count />
+  <Button count={0} />
 </main>
 
 <style>
